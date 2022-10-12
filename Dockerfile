@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     nodejs \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN apt-get update -qq && apt-get install -y default-libmysqlclient-dev
+RUN apt-get update -qq && apt-get install -y postgresql-client libpq-dev
 
 #Cache bundle install
 WORKDIR /tmp

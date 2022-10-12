@@ -1,17 +1,16 @@
-mysql:
-  image: mysql
+postgres:
+  image: postgres
   ports:
     - "3306:3306"
   volumes_from:
     - dbdata
   environment:
-    - MYSQL_ROOT_PASSWORD=root
-    - MYSQL_DATABASE=dev
+    - POSTGRES_PASSWORD=password
 
 dbdata:
   image: tianon/true
   volumes:
-    - /var/lib/mysql
+    - /var/lib/postgresql/data
 
 app:
   build: .
@@ -22,7 +21,7 @@ app:
   volumes_from:
     - appdata
   links:
-    - "mysql"
+    - "postgres"
 
 appdata:
   image: tianon/true
