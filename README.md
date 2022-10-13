@@ -76,7 +76,7 @@ docker-compose exec app rake db:create
 11. Browse http://localhost:3000. It will take time to load. Keep patient.
     ![Ruby on rails 7.0.3 docker with mysql](https://i.ibb.co/Z19FNSJ/Screenshot-2022-07-30-at-9-11-24-PM.png)
 
-12. You can also login on pgadmin. Browse http://localhost:5050/ . It will also take time to load for the first time. Keep patient.
+12. Browse http://localhost:5050/ . It will also take time to load for the first time. Keep patient. You can login on pgadmin. 
 username: admin@admin.com
 password: password
 
