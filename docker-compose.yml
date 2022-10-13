@@ -1,7 +1,6 @@
 postgres:
+  container_name: postgres_container
   image: postgres
-  ports:
-    - "3306:3306"
   volumes_from:
     - dbdata
   environment:
@@ -27,3 +26,26 @@ appdata:
   image: tianon/true
   volumes:
     - ".:/workspace"
+    
+# phppgadmin:
+#   image: "bitnami/phppgadmin:7.13.0"
+#   ports:
+#     - "8080:8080"
+#     - '443:8443'
+#   environment:
+#     PHP_PG_ADMIN_SERVER_HOST: postgres1
+#     PHP_PG_ADMIN_SERVER_PORT: 5432
+#     PHP_PG_ADMIN_SERVER_PASSWORD: password
+
+pgadmin:
+  container_name: pgadmin4_container
+  image: dpage/pgadmin4
+  restart: always
+  volumes:
+        - "./data_pgadmin:/var/lib/pgadmin"
+  environment:
+    PGADMIN_DEFAULT_EMAIL: admin@admin.com
+    PGADMIN_DEFAULT_PASSWORD: password
+    PGADMIN_DEFAULT_PORT: 5432
+  ports:
+    - "5050:80"
