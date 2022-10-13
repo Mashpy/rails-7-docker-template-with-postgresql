@@ -69,15 +69,18 @@ test:
 ```
  docker-compose up
 ```
-
-10. Browse http://localhost:3000
+10. Open another terminal and create a database -
+```
+docker-compose exec app rake db:create
+```
+11. Browse http://localhost:3000. It will take time to load. Keep patient.
     ![Ruby on rails 7.0.3 docker with mysql](https://i.ibb.co/Z19FNSJ/Screenshot-2022-07-30-at-9-11-24-PM.png)
 
-11. You can also login on pgadmin. Browse http://localhost:5050/
+12. You can also login on pgadmin. Browse http://localhost:5050/ . It will also take time to load for the first time. Keep patient.
 username: admin@admin.com
 password: password
 
-12. Add database connection on pgadmin. You need your postgres_container IP address.
+13. Add database connection on pgadmin. You need your postgres_container IP address.
 
 ```
 docker ps
@@ -88,12 +91,8 @@ copy hash code of postgres_container.
 docker inspect fcc97e066cc8 | grep IPAddress
 ```
 
-13. after login on pgadmin add connection. Write host IP address.
+14. after login on pgadmin add connection. Write host IP address.
 username: postgres
 password: password
 
-14. Open another terminal and create a database -
-```
-docker-compose exec app rake db:create
-```
 15. now you can start work on your project.
