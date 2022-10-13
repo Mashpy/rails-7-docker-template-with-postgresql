@@ -1,10 +1,11 @@
 ## Ruby on Rails 7 docker template with postgresql
 
-1. First clone the project
+1. Download the project first or git clone.
 
 ```
  git clone https://github.com/Mashpy/rails-7-docker-template-with-postgresql.git
 ```
+If you clone you have to change your repo name later from .git/config file
 
 2. Rename the project name as your wish
 
@@ -69,15 +70,19 @@ test:
 ```
  docker-compose up
 ```
-10. Open another terminal and create a database -
+10. wait little bit see your eyes on the console, it should show -
 ```
-docker-compose exec app bash sh
-rake db:create
+Puma Listening on http://0.0.0.0:3000
+Pg admin Listening at: http://[::]:80 (1)
 ```
-11. Browse http://localhost:3000. It will take time to load. Keep patient.
+It will take time to load. Keep patient. After then then open another terminal and create a database -
+```
+docker-compose exec app rake db:create
+```
+11. Browse http://localhost:3000.
     ![Ruby on rails 7.0.3 docker with mysql](https://i.ibb.co/Z19FNSJ/Screenshot-2022-07-30-at-9-11-24-PM.png)
 
-12. Browse http://localhost:5050/ . It will also take time to load for the first time. Keep patient. You can login on pgadmin. 
+12. Browse http://localhost:5050/ . You can login on pgadmin. 
 username: admin@admin.com
 password: password
 
