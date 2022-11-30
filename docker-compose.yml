@@ -1,15 +1,14 @@
+version: "3.9"
+volumes:
+  dbstore:
+  
 postgres:
   container_name: postgres_container
   image: postgres
-  volumes_from:
-    - dbdata
+  volumes:
+    - dbstore:/var/lib/postgresql/data
   environment:
     - POSTGRES_PASSWORD=password
-
-dbdata:
-  image: tianon/true
-  volumes:
-    - /var/lib/postgresql/data
 
 app:
   build: .
